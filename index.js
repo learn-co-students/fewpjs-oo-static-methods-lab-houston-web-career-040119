@@ -12,9 +12,7 @@ class Formatter {
       let exceptions = ['the', 'a', 'an', 'but', 'of', 'and', 'for', 'at', 'by', 'from']
       string = string.toLowerCase().split(' ');
       let arr = string.map((word, i) => {
-        if(i === 0){
-          return word.charAt(0).toUpperCase() + word.slice(1);
-        } else if (!exceptions.includes(word)) {
+        if (!exceptions.includes(word) || i === 0) {
           return word.charAt(0).toUpperCase() + word.slice(1);
         } else {
           return word
